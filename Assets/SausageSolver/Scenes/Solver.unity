@@ -248,6 +248,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1445137381}
+  - 114: {fileID: 1445137382}
   m_Layer: 0
   m_Name: board_editor
   m_TagString: Untagged
@@ -268,6 +269,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1445137382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445137380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed158f9f93a42704697cefea05eca0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1643029629
 GameObject:
   m_ObjectHideFlags: 0
