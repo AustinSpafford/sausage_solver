@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3a87854d9062d5d4db296c72c89c816c
+timeCreated: 1483589469
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - DirtPrefab: {fileID: 1000013303619394, guid: 0b09e78a384be8d4a9d346e79f9f7d0a,
+      type: 2}
+  - GrassPrefab: {fileID: 1000013595210314, guid: f34f1c11f9f84894782155a4018644ef,
+      type: 2}
+  - GrillPrefab: {fileID: 1000014111054240, guid: be84aaefb46f20243906be3dc0f2d6b6,
+      type: 2}
+  - LadderPrefab: {fileID: 1000013768586992, guid: a2e1b20804920a8488ecf91870784a8e,
+      type: 2}
+  - WaterPrefab: {fileID: 1000012399091480, guid: 2df6203010edb5647b9c93f674e9239a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
