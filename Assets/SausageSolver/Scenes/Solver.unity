@@ -186,6 +186,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 335880642}
   - 108: {fileID: 335880641}
+  - 114: {fileID: 335880643}
   m_Layer: 0
   m_Name: sun_light
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 7819eae5aa13f87448f783c86808b29e, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -240,6 +241,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &335880643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335880640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2177270bb14a0804aa80b64264c9cd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalVelocity: {x: 0.2, y: 0, z: 0.5}
+  WrappingDistance: 1000
 --- !u!1001 &457263303
 Prefab:
   m_ObjectHideFlags: 0
@@ -323,7 +337,7 @@ Transform:
   - {fileID: 1573277208}
   - {fileID: 1898036005}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &819970309
 Prefab:
   m_ObjectHideFlags: 0
@@ -414,7 +428,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!1001 &1289462945
 Prefab:
   m_ObjectHideFlags: 0
@@ -494,7 +508,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1445137382
 MonoBehaviour:
   m_ObjectHideFlags: 0
