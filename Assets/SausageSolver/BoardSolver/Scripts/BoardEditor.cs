@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BoardEditor : MonoBehaviour
 {
-	public void Awake()
+	public void Start()
 	{
 		boardState = new BoardState(InitialCellCountX, InitialCellCountY);
 		
@@ -23,7 +23,8 @@ public class BoardEditor : MonoBehaviour
 						0.0f,
 						(float)(yIndex - (boardState.CellCountY / 2)));
 
-				newCell.GetComponent<CellEditor>().TargetCell = boardState.GetCell(xIndex, yIndex);
+				newCell.GetComponent<CellEditor>().TargetCell = 
+					boardState.GetCell(xIndex, yIndex);
 			}
 		}
 	}
