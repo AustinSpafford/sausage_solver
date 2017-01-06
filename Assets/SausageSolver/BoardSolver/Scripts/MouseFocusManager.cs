@@ -27,21 +27,21 @@ public class MouseFocusManager : MonoBehaviour
 		{
 			if (currentFocus != null)
 			{
-				CellEditor previousOwningCell = currentFocus.GetComponentInParent<CellEditor>();
+				SelectableCellFace oldFocusedFace = currentFocus.GetComponentInParent<SelectableCellFace>();
 
-				if (previousOwningCell != null)
+				if (oldFocusedFace != null)
 				{
-					previousOwningCell.SetFocusedChild(null);
+					oldFocusedFace.SetFocused(false);
 				}
 			}
 
 			if (newFocus != null)
 			{
-				CellEditor newOwningCell = newFocus.GetComponentInParent<CellEditor>();
+				SelectableCellFace newFocusedFace = newFocus.GetComponentInParent<SelectableCellFace>();
 				
-				if (newOwningCell != null)
+				if (newFocusedFace != null)
 				{
-					newOwningCell.SetFocusedChild(newFocus);
+					newFocusedFace.SetFocused(true);
 				}
 			}
 

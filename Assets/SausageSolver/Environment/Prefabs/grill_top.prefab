@@ -173,6 +173,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012329568908}
   - 65: {fileID: 65000012361002024}
+  - 114: {fileID: 114000010272060754}
   m_Layer: 0
   m_Name: grill_top
   m_TagString: Untagged
@@ -655,3 +656,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1, z: 1}
   m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &114000010272060754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014111054240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b761b7d7bdadda42928abcd6fc3e51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectionEffectPrefab: {fileID: 1000010153835936, guid: b536561ee32860444947b6ff1f2fe566,
+    type: 2}
