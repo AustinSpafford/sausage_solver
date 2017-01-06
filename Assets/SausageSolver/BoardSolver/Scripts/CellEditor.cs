@@ -12,7 +12,42 @@ public class CellEditor : MonoBehaviour
 		UpdateCellDisplay();
 	}
 
-	public void UpdateCellDisplay()
+	public void Update()
+	{
+		if (focusedChildTransform != null)
+		{
+			bool leftMouseClicked = Input.GetMouseButtonDown(0);
+			bool rightMouseClicked = Input.GetMouseButtonDown(1);
+			float scrollWheelDelta = Input.GetAxis("Mouse ScrollWheel");
+
+			if ((topInstance != null)  && 
+				focusedChildTransform.IsChildOf(topInstance.transform))
+			{
+				if (leftMouseClicked)
+				{
+					TargetCell.Height++;
+
+					UpdateCellDisplay();
+				}
+				
+				if (rightMouseClicked &&
+					(TargetCell.Height > 0))
+				{
+					TargetCell.Height--;
+
+					UpdateCellDisplay();
+				}
+			}
+		}
+	}
+
+	public void SetFocusedChild(
+		Transform focusedTransform)
+	{
+		focusedChildTransform = focusedTransform;
+	}
+
+	private void UpdateCellDisplay()
 	{
 		if (TargetCell == null)
 		{
@@ -105,6 +140,8 @@ public class CellEditor : MonoBehaviour
 
 	private GameObject westInstance = null;
 	private GameObject westSourcePrefab = null;
+
+	private Transform focusedChildTransform = null;
 	
 	[SerializeField]
 	private GameObject DirtPrefab = null;
@@ -125,6 +162,13 @@ public class CellEditor : MonoBehaviour
 	{
 		if (inoutSourcePrefab != wantedPrefab)
 		{
+			if (inoutInstance != null)
+			{
+				GameObject.Destroy(inoutInstance);
+
+				inoutInstance = null;
+			}
+
 			inoutInstance = Instantiate(wantedPrefab);
 
 			inoutInstance.transform.SetParent(
