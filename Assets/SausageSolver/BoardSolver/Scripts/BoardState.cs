@@ -12,7 +12,7 @@ public enum PlayerVerb
 
 public class CellState
 {
-	public int Height = 1;
+	public int Height = 0;
 	public bool IsGrill = false;
 	public bool[] CanBeClimbedByVerb = new bool[4]; // TODO: Cleanup hardcoded value, without hammering Enum.GetNames().
 
@@ -50,12 +50,6 @@ public class BoardState
 			for (int yIndex = 0; yIndex < cellCountY; ++yIndex)
 			{
 				cells[xIndex, yIndex] = new CellState();
-
-				// RANDOMIZE!!!
-				var cell = cells[xIndex, yIndex];
-				cell.Height = Random.Range(0, 3);
-				cell.IsGrill = ((cell.Height > 0) && (Random.Range(0, 4) == 0));
-				cell.CanBeClimbedByVerb[(int)PlayerVerb.MoveNorth] = (Random.Range(0, 10) == 0);
 			}
 		}
 	}

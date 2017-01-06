@@ -35,14 +35,36 @@ public class CellEditor : MonoBehaviour
 				{
 					TargetCell.Height--;
 
-					if (TargetCell.Height == 0)
-					{
-						TargetCell.IsGrill = false;
-					}
+					UpdateCellDisplay();
+				}
+
+				if (scrollWheelDelta != 0.0f)
+				{
+					TargetCell.IsGrill = !(TargetCell.IsGrill);
 
 					UpdateCellDisplay();
 				}
 			}
+
+			HandleInputForSide(
+				northInstance,
+				PlayerVerb.MoveSouth,
+				scrollWheelDelta);			
+
+			HandleInputForSide(
+				southInstance,
+				PlayerVerb.MoveNorth,
+				scrollWheelDelta);			
+
+			HandleInputForSide(
+				eastInstance,
+				PlayerVerb.MoveWest,
+				scrollWheelDelta);			
+
+			HandleInputForSide(
+				westInstance,
+				PlayerVerb.MoveEast,
+				scrollWheelDelta);
 		}
 	}
 
@@ -50,6 +72,25 @@ public class CellEditor : MonoBehaviour
 		Transform focusedTransform)
 	{
 		focusedChildTransform = focusedTransform;
+	}
+
+	private void HandleInputForSide(
+		GameObject sideInstance,
+		PlayerVerb approachedViaPlayerVerb,
+		float scrollWheelDelta)
+	{
+		if ((sideInstance != null)  && 
+			focusedChildTransform.IsChildOf(sideInstance.transform))
+		{
+			if (scrollWheelDelta != 0.0f)
+			{
+				TargetCell.CanBeClimbedByVerb[(int)approachedViaPlayerVerb] = 
+					!(TargetCell.CanBeClimbedByVerb[(int)approachedViaPlayerVerb]);
+
+				UpdateCellDisplay();
+			}
+		}
+		
 	}
 
 	private void UpdateCellDisplay()
