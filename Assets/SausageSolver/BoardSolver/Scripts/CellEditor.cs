@@ -35,6 +35,11 @@ public class CellEditor : MonoBehaviour
 				{
 					TargetCell.Height--;
 
+					if (TargetCell.Height == 0)
+					{
+						TargetCell.IsGrill = false;
+					}
+
 					UpdateCellDisplay();
 				}
 			}
